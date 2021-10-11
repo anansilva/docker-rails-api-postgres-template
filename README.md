@@ -19,8 +19,9 @@ removed it so I can later install rspec.
 docker-compose build
 ```
 
-Adjust the `config/database.yml` to docker and the postgres image. It should
-look like this:
+Adjust the `config/database.yml`. Instead of pointing to localhost (rails
+default) it should point to the `db` container. The username and password also
+need to be adjusted to the defaults set by the `postgres` image.
 
 ```
 default: &default
