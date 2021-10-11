@@ -4,14 +4,13 @@ To generate a new rails api app with postgres and without minitest, run:
 docker-compose run --no-deps web rails new . --api --force --database=postgresql -T
 ```
 
+If you work with minitest, you can remove the `-T` flag from the command.
+
 This is what happens when you run this command:
 
 1. It builds an image based on the Dockerfile
 2. It creates a new container based on that image
 3. Runs `rails new` inside the container
-
-If you work with minitest, you can remove the `-T` flag from the command. I
-removed it so I can later install rspec.
 
 `rails new` updates the Gemfile, so we will need to build the image again:
 
